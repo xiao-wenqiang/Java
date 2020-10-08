@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--get效率高但是不安全不能传大文件
+    要提交的值，都要name属性
+    所以：name、value是键值对用来传数据的，id用来标记组件的
+    html设置内容，css设置内容的样式
+    页面是一棵树
+
+    通用的生成注释的办法：ctrl+/
+
+    属性readonly：只读
+    属性disabled：禁用
+    属性hidden：隐藏
+
+    属性placeholder：提示信息
+    属性required：判断非空
+    属性pattern：正则表达式-->
+<div>
+    <h1>注册</h1>
+    <form method="post" action="组件.html">   <!--表单就是用来提交信息的-->
+        <div>
+            <span>用户名：</span>
+            <input type="text" name="username" placeholder="请输入用户名" required>
+        </div>
+        <div>
+            <span>密码：</span>
+            <input type="password" name="password" placeholder="请输入密码">
+            <input type="hidden" id="md5password" name="md5password">    <!--这个处理最好-->
+        </div>
+            <div>
+                <span>性别（单选框）：</span>
+                <input type="radio" value="male" name="sex" checked>男
+                <input type="radio" value="remale" name="sex">女
+            </div>
+            <div>
+                <span>爱好（复选框）：</span>
+                <input type="checkbox" value="code" name="hobby">代码
+                <input type="checkbox" value="sea" name="hobby" checked>大海
+            </div>
+            <div>
+                <span>有喜欢没（下拉框）：</span>
+                <select name="选择名称">
+                    <option value="滑虾">滑虾</option>
+                    <option value="娃娃">娃娃</option>
+                </select>
+            </div>
+            <div>
+                <span>反馈（文本域）：</span><br>
+                <textarea name="textarea">反馈内容</textarea>
+            </div>
+            <div>
+                <span>文件域：</span>
+                <input type="file" name="file">
+                <input type="button" name="upload" value="上传">
+            </div>
+            <div>
+                <span>数字：</span>
+                <input type="number" name="number" max="100" min="0" step="1">
+            </div>
+            <div>
+                <span>滑块：音量</span>
+                <input type="range" name="voice" min="0" max="100" step="1">
+            </div>
+            <div>
+                <span>搜索框：</span>
+                <input type="search" name="search">
+            </div>
+            <div>
+                <span>增强鼠标可用性：</span>
+                <br>
+                <label for="mark">点我呀</label>
+                <input type="text" id="mark">
+            </div>
+            <div>
+                <span>邮箱：</span>
+                <input type="email" pattern="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$">
+            </div>
+
+
+            <br>
+            <br>
+            <div>
+                <span>按钮：</span>
+                <input type="button" name="button1" value="点就送">
+                <input type="image" src="../resource/小乖.jpg" width="50" height="100">
+            </div>
+            <div>
+                <input type="submit" onclick="mds">    <!--也可以用表单的绑定事件onsubmit=""，true就是提交，false不提交-->
+                <input type="reset">
+            </div>
+    </form>
+</div>
+
+<script>
+    function mds(){
+        //加密密码，和做些数据检查
+        //var password = document.getElementById("password");
+        //var md5password = md5(password.value)
+        //password.value = md5(password);//加密密码
+    }
+</script>
+</body>
+</html>

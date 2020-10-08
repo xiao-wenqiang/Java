@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+}
+h1{
+    color: aquamarine;
+}
+div{
+}
+
+a:hover{    /*鼠标停在上面的状态。一般用它就好了。*/
+    color: aquamarine;
+}
+a:active{   /*鼠标按下还没释放的状态*/
+    color: coral;
+}
+div{
+    background: coral url("../resource/小乖.jpg") 10px 10px no-repeat ;
+    height: 2338px;
+    width: 1080px;
+
+}

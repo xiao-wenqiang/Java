@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <form>
+        <div>
+            <span>用户名：</span>
+            <input type="text" id="username">
+        </div>
+    </form>
+    <script>
+        var username = document.getElementById("username");
+    </script>
+
+</body>
+</html>
+
+<!--jQuery公式：$(selector).action()    $就代表jQuery    选择器就是CSS的选择器
+            如：$('#submit').click( function(){} )
+            如：$('.class1').click( function(){} )
+            如：$('p').click( function(){} )
+            CSS有的选择器它都可以有
+    事件：鼠标事件：mouse
+        键盘事件：
+        其他事件：
+    操作DOM：
+        $('').text();   不带参的：获取值
+        $('').text('八八八八');   带参的：设置值：纯文本
+        $('').html();    获取值
+        $('').html('八八八八');   设置值：会解析为html标签
+    操作CSS：
+        $('').css("color","red");
+        $('').css({"height","600px"},{"width","600px");
+        $('').shou();   本质还是：属性display:none
+        $('').hidden();
+
+
+    js原生的选择器：只有3种：document.getElementByTagName();...ById();...ByClassName;即标签/id/类名
+        作用就是选择节点，然后可以操作节点
+    所以：整个html文件就是就是一棵树，一个DOM树形结构，我们就是要选择出来节点，对节点做一些操作。
+    -->

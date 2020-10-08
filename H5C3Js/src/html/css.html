@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/css1.css" rel="stylesheet">
+</head>
+<body>
+
+<!--span本身是空标签没什么用，但是约定俗成，单独的文字用它，可以自定义样式。
+    div也是。
+    所以所有都套上<div></div>  单独的文字都套上<span></span>-->
+    <h1>海绵宝宝</h1>
+    <p>88888888888888
+        <span style="color: #ff7f50">重点要突出的字</span>
+        88888888888888
+    </p>
+    <a href="">hello</a>
+    <div>fff</div>
+
+
+</body>
+</html>
+
+<!--内部样式表：选择器{声明;}
+    外部样式表：<link rel="stylesheet" href="../css/css1.css">
+    行内样式：<h1 style="color:red"></h1>
+    优先级：就近原则：内部样式肯定最近，然后看内部和外部的谁定义比较近（后定义）
+
+    选择器：选择页面上的一类元素
+        标签选择器：h1{color:red;}    h1的标签（对一类标签）
+        class选择器：.bendan{color:red;}    属性class="bendan"的标签（可以跨标签）
+        id选择器：#8888{color:red;}    属性id=8888的标签（全局唯一）
+        层次选择器：
+        结构伪类选择器：
+    优先级：不是就近原则：id选择器>class选择器>标签选择器
+
+    font-family:字体;
+    font-size:大小;
+    font-weight:粗细;
+    font-indent:2em;    缩进2格
+        font:字体 大小 粗细;（关于字体的放一起写）
+    color:颜色;
+    text-decoration:no;  去掉上中下划线
+
+    text-align:center;   文本水平对齐方式：居中
+    单行文本上下对齐方式：居中：设置行高line-height=高height
+    vertical-align:middle;    图片上下对齐方式：居中
+
+    border:1px solid red;   边框：大小 样式 颜色
+    盒子模型：
+        margin：外边距
+        border：边框：粗线 样式 颜色
+        padding：内边距
+
+    行内元素：独占一行
+    块级元素：不独占一行
+        display: ;  block块、inline行内、inline-block行内块、none不展示
+
+    定位：
+        相对定位：position:relative;然后上下左右偏移
+        绝对定位：position:absolute;
+        z-index：
+
+
+    -->

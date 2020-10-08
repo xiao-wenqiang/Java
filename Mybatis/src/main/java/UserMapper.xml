@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间=绑定一个Mapper接口：
+    xml文件实现了UserMapper接口-->
+<mapper namespace="UserMapper">
+    <select id="getUserList" resultType="User">
+        select * from mybatis.user
+    </select>
+    <select id="getUserById" resultType="User" parameterType="int">
+        select * from mybatis.user where id = #{id}
+    </select>
+    <insert id="addUser" parameterType="User">
+        insert into mybatis.user(id, username, password) VALUES (#{id},#{username},#{password})
+    </insert>
+    <update id="updateUser" parameterType="User">
+        update mybatis.user set password=#{password} where id=#{id}
+    </update>
+    <delete id="deleteUser" parameterType="int">
+        delete from mybatis.user where id=#{id}
+    </delete>
+
+    <update id="updateUser2" parameterType="Map">
+        update mybatis.user set password=#{password} where id=#{id}
+    </update>
+
+<!--模糊查询：要防止SQL注入-->
+    <select id="getUserLike" parameterType="String" resultType="User">
+        select * from mybatis.user where username like #{username}
+    </select>
+
+    <select id="getUserByLimit" resultType="User" parameterType="Map">
+        select * from mybatis.user limit #{startIndex},#{pageSize}
+    </select>
+
+    <select id="getUserIf" parameterType="Map" resultType="User">
+        select * from mybatis.user
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+            <if test="username!=null">
+                and username=#{username}
+            </if>
+        </where>
+    </select>
+</mapper>

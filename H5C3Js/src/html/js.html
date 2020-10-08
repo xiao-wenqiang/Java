@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../js/js1.js"></script>
+
+    <script>
+// 定义变量都用var
+        'use strict';
+        let name2 = "bendan";
+        var age = 22;
+        var arr = [11,22,"sansan",true]
+        var student1 = {
+            name:"bendan",
+            bitrh:1998,
+            tags:["js","java"],
+            age:function (){
+                var now = new Date().getFullYear();
+                return now-this.bitrh;
+            }
+        }
+// Map、Set
+        var map = new Map([["tom",88],["jack",77],["lucy",99]]);
+        map.set("admin",123456);
+        //map.delete("jack");
+        console.log(map.get("tom"));
+        var set = new Set([1,2,3,3,3]);
+        set.add(4);
+        set.delete(1)
+        for (let x of map){    //forof遍历Map、Set
+            console.log(x);
+        }
+        for (let x of set){
+            console.log(x);
+        }
+// 函数
+        function print(x){
+            console.log(x);
+        }
+        console.log(print(name2));
+// Date对象   0~11代表月
+    var date = new Date();
+    console.log(date.getFullYear());
+    console.log(date.getTime());
+    var date2 = new Date(1600227097118);
+
+// js对象和json字符串的转换！对象和字符串！
+    var user1 = {name:"u1", age:88}
+    var jsonUser1 = JSON.stringify(user1);
+    var user2 = JSON.parse('{"name":"u1","age":88}');
+
+// 面向对象 es6 新语法
+    class student{
+        constructor(name) {
+            this.name = name;
+        }
+        run(){
+
+        }
+    }
+    var bendan = new student("bendan");
+    class xiaostudent extends student{
+        constructor(name,grade) {
+            super(name);
+            this.grade = grade;
+        }
+    }
+
+// DOM对象：document对象：文档对象模型
+// 整个html,整个浏览器网页，就是一棵树，一个DOM树形结构，我们操作的就是这颗树，做增删改查
+//     做网页就是：网络通信、交互、和操作DOM
+//     var id1 = document.getElementById("id1");取得节点
+//     id1.innerText = "123"; 修改文本的值（也只能修改文本的值）
+//     id1.innerHTML = "<strong>123</strong>"; 可以解析HTML文本标签（还可以解析文本的标签）
+//     id1.style.color = "red"; 可以操作它的样式
+// 删除一个节点的办法：先找到它的父节点，再通过父节点删除自己。（不能自己删除自己）
+//     var son1 = document.getElementById("son1");取得子节点
+//     var father = son1.parentElement;取得父节点
+//     father.removeChild(son1);删除指定子节点
+//     father.appendChild(son8);追加子节点，把页面别处节点加进来
+
+
+    </script>
+</head>
+<body>
+    <p>js</p>
+    <div id="list">
+        <p id="se">se</p>
+        <p id="me">me</p>
+        <p id="ee">ee</p>
+    </div>
+
+</body>
+</html>
+
+<!--引入办法：标签内写代码、外部引入
+    浏览器本身也是IDE：console.log(score)：在浏览器控制台打印变量
+    'use strict';   严格检查模式（要设置浏览器es6、要写在js的第一行）
+    区别于Java：js判断等于要用 ===（因为==会判断同值不同类型也为true）
+        js数组可以存储不同类型的数据 var arr=[1,"hai",true];
+        js变量都用var，数组用[]，对象用{}，创建变量不用写new！
+        js建议局部变量都换用 let
+        js字符串的值改不了！
+        js数组的长度可变！还可以当栈用压入弹出首尾元素！还有其他方法
+        js对象：属性：键值对    （建都是字符串，值是任意对象）（不用new）
+            只有对象，没有面向对象，，没有封装继承多态，不用new！
+        js可以删减属性：delete student.age;
+            可以增加属性：student.what = "what";   就添加属性就好啦
+        js变量都是局部变量，然后内部可以访问外部就是
+
+    js文件默认的全局对象：window：多个js文件对一个window对象：不安全
+        全局的变量都绑定在window下的：如:var x=1;window.alert(window.x);
+    解决多个js文件对一个window对象的问题：
+        每个js文件自定义一个全局对象：如：var yfapp={};yfapp.name="xwq";yfapp.add=function(a,b){return a+b;}
+    ！！就是，本来多个js文件都是一个window对象，变量函数都在window下的，
+        现在每个js文件自定义一个对象，让再定义的变量函数都在它下面。
+    ！！建议都用let去定义局部变量    不区分整数浮点数
+    ！！常量const
+    ！！所以js也都是对象，js文件首先定义的变量/方法都是window的的，
+        可以在js文件首先定义一个对象，再在它里面定义变量/方法
+    对象中拆抽出来的方法，可以用apply指定调用它的对象：getAge.apply(xwq,[]);
+
+    ！！js也面向对象：
+        没有class类模板，不能new对象，要自定义对象内容，
+            但是有原型，可以用其他自定义对象的原型（也就是去继承一个父类）
+        原型链：自定义对象<->自定义对象的原型<->object对象的原型<->object对象
+
+    ！！BOM：浏览器对象模型
+        js的诞生是为了：能在浏览器运行，能操作浏览器
+        window对象：代表浏览器窗口
+        navigator对象：封装了浏览器的信息
+        screen对象：屏幕的尺寸
+        location对象：代表当前页面的URL信息
+
+        document对象：代表当前页面
+            document.getElementById("");    可以取得具体的文档树节点（核心）
+            document.cookie;    可以取得cookie
+        history对象：代表历史记录，可以实现前进后退，不要用哈
+
+    -->

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cat" class="pojo2.Cat"/>
+    <bean id="dog" class="pojo2.Dog"/>
+<!--byName：自动在容器里找，找要setter的和容器里的对象做匹配-->
+    <bean id="people" class="pojo2.People" autowire="byName">
+        <property name="name" value="文强"/>
+    </bean>
+
+</beans>
